@@ -1,0 +1,34 @@
+{
+    "name": "@hullick/directus-importer_exporter",
+    "version": "1.0.5",
+    "description": "A library to import and export directu`s files",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "dependencies": {
+        "axios": "^0.20.0",
+        "eslint": "^7.11.0",
+        "tslint": "^6.1.3",
+        "tslint-config-airbnb": "^5.11.2",
+        "typescript": "^4.0.3"
+    },
+    "prepublish": "tsc",
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hullick/DirectusImporterAndExporter.git"
+    },
+    "keywords": [
+        "importer",
+        "exporter",
+        "directus"
+    ],
+    "author": "Hullick Bartholo Gomes",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/hullick/DirectusImporterAndExporter/issues"
+    },
+    "homepage": "https://github.com/hullick/DirectusImporterAndExporter#readme"
+}

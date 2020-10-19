@@ -1,5 +1,2 @@
-const world = '🗺️';
-
-export function hello(word: string = world): string {
-  return `Hello ${world}! `;
-}
+export { AuthenticationService } from './services/authentication.service';
+export { User } from './models/user.model';

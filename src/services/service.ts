@@ -3,15 +3,19 @@ import axios, { AxiosResponse, Method } from 'axios';
 export abstract class Service {
   static doRequest(
     requestMethod: Method,
-    requestUrl: string = 'proteste/' + 'auth/authenticate',
-    requestData: Object,
+    requestUrl: string,
+    requestData?: Object,
+    extraHeaders?: Object,
   ): Promise<AxiosResponse> {
+    const avaliableHeaders = {};
+
     return axios.request({
       method: requestMethod,
       baseURL: 'https://directus.proteste.org.br/directus/public/',
       timeout: 25000,
-      url: requestUrl,
+      url: `proteste/${requestUrl}`,
       data: requestData,
+      headers: (<any>Object).assign(avaliableHeaders, extraHeaders),
     });
   }
 }

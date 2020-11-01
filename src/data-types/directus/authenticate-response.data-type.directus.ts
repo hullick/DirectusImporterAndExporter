@@ -1,5 +1,5 @@
 export interface AuthenticateResponseDataType {
-  token: String;
+  token?: String;
   user: {
     'id': Number,
     'status': String,

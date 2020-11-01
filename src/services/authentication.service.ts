@@ -4,7 +4,7 @@ import { Service } from './service';
 
 export abstract class AuthenticationService {
   static authenticate(emailRequest: string, authenticationPassword: string): Promise<User> {
-    return Service.doRequest('POST', undefined, {
+    return Service.doRequest('POST', 'auth/authenticate', {
       email: emailRequest,
       password: authenticationPassword,
     }).then((response) => {

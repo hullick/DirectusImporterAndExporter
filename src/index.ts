@@ -1,2 +1,11 @@
-export { AuthenticationService } from './services/authentication.service';
+export { CaseConverter } from './helper/case-converter.helper';
+export { SerializatorHelper } from './helper/serializator.helper';
 export { User } from './models/user.model';
+export { AuthenticationService } from './services/authentication.service';
+export { Collection } from './models/collection.model';
+export { CollectionStructure } from './models/collection-structure.model';
+export { CollectionStructureFieldFactory } from './factory/collection-structure-field.factory';
+export { CollectionStructureFactory } from './factory/collection-structure.factory';
+export { CollectionFactory } from './factory/collection.factory';
+export { CollectionStructureField } from './models/collection-structure-field.model';
+export { CollectionService } from './services/collection.service';

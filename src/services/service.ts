@@ -1,4 +1,5 @@
 import axios, { AxiosResponse, Method } from 'axios';
+import { EnvironmentService } from './environment.service';
 
 export abstract class Service {
   static doRequest(
@@ -7,15 +8,13 @@ export abstract class Service {
     requestData?: Object,
     extraHeaders?: Object,
   ): Promise<AxiosResponse> {
-    const avaliableHeaders = {};
-
     return axios.request({
       method: requestMethod,
-      baseURL: 'https://directus.proteste.org.br/directus/public/',
-      timeout: 25000,
-      url: `proteste/${requestUrl}`,
+      baseURL: EnvironmentService.getEnvironment().baseUrl,
+      timeout: EnvironmentService.getEnvironment().requestTimeout,
+      url: `${EnvironmentService.getEnvironment().project}/${requestUrl}`,
       data: requestData,
-      headers: (<any>Object).assign(avaliableHeaders, extraHeaders),
+      headers: extraHeaders,
     });
   }
 }

@@ -6,8 +6,10 @@ import { Collection } from '../models/collection.model';
 import { Service } from './service';
 
 export abstract class CollectionService {
-  static listCollectionStructures(): Promise<CollectionStructure[]> {
-    return Service.doRequest('GET', 'collections').then((response) => {
+  static listCollectionStructures(
+    extraHeaders?: Object
+  ): Promise<CollectionStructure[]> {
+    return Service.doRequest('GET', 'collections', undefined, extraHeaders).then((response) => {
       return response.data.data.map(
         (collectionStructureDataType: CollectionStructureResponseDataType) => {
           return CollectionStructureFactory.getCollectionStructureInstanceFrom(
@@ -17,8 +19,8 @@ export abstract class CollectionService {
     });
   }
 
-  static listCollectionData(collectionName: string): Promise<Collection[]> {
-    return Service.doRequest('GET', `items/${collectionName}`).then((response) => {
+  static listCollectionData(collectionName: string, extraHeaders?: Object): Promise<Collection[]> {
+    return Service.doRequest('GET', `items/${collectionName}`, undefined, extraHeaders).then((response) => {
       return response.data.data.map((resultCollectionData: Object) => {
         return CollectionFactory.getCollectionInstanceFrom({
           collection: collectionName,
